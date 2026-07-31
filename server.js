@@ -1,7 +1,4 @@
 import 'dotenv/config';
-import { WebSocket } from 'ws';
-// Parchear globalThis antes de que @supabase/realtime-js se inicialice (necesario en Node < 22)
-if (!globalThis.WebSocket) globalThis.WebSocket = WebSocket;
 import express from 'express';
 import { securityMiddleware } from './src/middleware/security.js';
 import clientsRouter from './src/routes/clients.js';
