@@ -32,8 +32,8 @@ router.post(
   [
     body('client_id').isUUID(),
     body('url').isURL({ require_tld: false }),
-    body('alt_text').optional().isString().trim().isLength({ max: 200 }).escape(),
-    body('caption').optional().isString().trim().isLength({ max: 300 }).escape(),
+    body('alt_text').optional().isString().trim().isLength({ max: 200 }),
+    body('caption').optional().isString().trim().isLength({ max: 300 }),
     body('sort_order').optional().isInt({ min: 0 }),
   ],
   handleValidation,
